@@ -56,5 +56,12 @@
     </div>
 </form>
 
-
+@{
+    if(ViewBag.Message != "")
+    {
+        <div class="text-primary mt-4">
+            @ViewBag.Message
+        </div>
+    }
+}
 

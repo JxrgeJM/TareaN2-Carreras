@@ -13,8 +13,9 @@ namespace ProgramacionAvanzadaTareaN2.Presentacion.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string pMensaje = "")
         {
+            ViewBag.Mensaje = pMensaje;
             return View();
         }
 
