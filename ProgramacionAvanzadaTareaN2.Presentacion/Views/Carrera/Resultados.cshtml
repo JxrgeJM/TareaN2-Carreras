@@ -1,0 +1,67 @@
+﻿@model ProgramacionAvanzadaTareaN2.Presentacion.Models.CarreraViewModel
+
+@{
+    ViewData["Title"] = "Resultados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Resultados de la carrera</h1>
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Carreras[1].Corredor.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Carreras[1].Corredor.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Carreras[1].MinutosSegundos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Carreras[1].MetrosPorSegundo)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @for( int i = 0; i < Model.Carreras.Count(); ++i)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.Carreras[i].Corredor.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Carreras[i].Corredor.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Carreras[i].MinutosSegundos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Carreras[i].MetrosPorSegundo)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>
+        <label asp-for="MejorVelocidad" class="control-label"></label>
+        <label class="text-primary">
+            @Html.DisplayFor(model => model.MejorVelocidad)
+        </label>
+    </p>
+
+    <p>
+        <label asp-for="PeorVelocidad" class="control-label"></label>
+                <label class="text-danger">
+            @Html.DisplayFor(model => model.PeorVelocidad)
+        </label>
+    </p>
+
+    <p>
+        <label asp-for="VelocidadPromedio" class="control-label"></label>
+        <label class="text-primary">
+            @Html.DisplayFor(model => model.VelocidadPromedio)
+        </label>
+    </p>

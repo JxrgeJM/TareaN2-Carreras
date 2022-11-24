@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProgramacionAvanzadaTareaN2.Entidades.Corredor>
+
+@{
+    ViewData["Title"] = "Lista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Lista de corredores</h1>
+
+<p class="text-end">
+    <a asp-action="Create" class="btn btn-primary">Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
